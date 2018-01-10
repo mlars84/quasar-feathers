@@ -27,6 +27,11 @@ module.exports = {
     purifyCSS: true
   },
   dev: {
+    proxyTable: {
+      '/api': {
+        target: 'http://localhost:3030',
+        changeOrigin: true
+      },
     env: require('./dev.env'),
     cssSourceMap: true,
     // auto open browser or not
