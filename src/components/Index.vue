@@ -1,4 +1,4 @@
- <q-layout ref="layout">
+<q-layout ref="layout">
    <q-toolbar slot="header">
      <q-btn flat @click="$refs.layout.toggleLeft()" v-show="authenticated">
        <q-icon name="menu" />
