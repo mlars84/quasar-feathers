@@ -25,9 +25,35 @@ export default new VueRouter({
   scrollBehavior: () => ({ y: 0 }),
 
   routes: [
-    { path: '/', component: load('Home') },
-    { path: '/SignIn', component: load('SignIn') },
-    // Always leave this last one
-    { path: '*', component: load('Error404') } // Not found
+    {
+      path: '/',
+      component: load('Index'),
+      children: [
+        {
+          path: '/home',
+          name: 'home',
+          component: load('Home')
+        },
+        {
+          path: '/signin',
+          name: 'signin',
+          component: load('SignIn')
+        },
+        {
+          path: '/register',
+          name: 'register',
+          component: load('SignIn')
+        },
+        {
+          path: '/chat',
+          name: 'chat',
+          component: load('Chat')
+        }
+      ]
+    },
+    {
+      path: '*',
+      component: load('Error404')
+    } // Not found
   ]
 })
