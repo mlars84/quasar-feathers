@@ -1,4 +1,5 @@
-<q-layout ref="layout">
+<template>
+  <q-layout ref="layout">
    <q-toolbar slot="header">
      <q-btn flat @click="$refs.layout.toggleLeft()" v-show="authenticated">
        <q-icon name="menu" />
@@ -50,3 +51,15 @@
    <router-view :user="user"></router-view>
 
  </q-layout>
+</template>
+
+<script>
+export default {
+  data () {
+    return {}
+  }
+}
+</script>
+
+<style>
+</style>
